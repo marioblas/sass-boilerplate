@@ -5,3 +5,18 @@
 /// Regular font family
 /// @type List
 $font-stack: ('Helvetica Neue', 'Helvetica', 'Arial', sans-serif) !default;
+
+
+
+/// Container's maximum width
+/// Below that is 100%
+/// @type Length
+$max-width: 1200px !default;
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
