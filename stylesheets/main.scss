@@ -1,16 +1,16 @@
 @charset 'utf-8';
 
-// Vendors and external styles
-@import
-  'vendors/normalize',
-  'vendors/include-media';
-
 // Tools and helpers
 @import
   'utils/variables',
   'utils/functions',
   'utils/mixins',
   'utils/helpers';
+
+// Vendors and external styles
+@import
+  'vendors/normalize',
+  'vendors/include-media';
 
 // Base stuff
 @import
