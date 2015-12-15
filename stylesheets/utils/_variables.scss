@@ -17,6 +17,11 @@ $code-font-stack: ('Droid Sans Mono', 'DejaVu Sans Mono', 'Courier New', 'Monaco
 /// @type Length
 $max-width: 1200px !default;
 
+/// Container's horizontal padding
+/// Specially useful for small screens
+/// @type Length
+$horizontal-padding: 20px !default;
+
 
 
 /// Relative or absolute URL where all assets are served from
@@ -32,17 +37,14 @@ $base-url: '/assets/' !default;
 $brand-primary: #3297df !default;
 $brand-secondary: #e0effd !default;
 
+/// Basic colors
+/// @type Color
+$white: #fff !default;
+$black: #000 !default;
+
 /// Message colors
 /// @type Color
 $success-color: #4caf50 !default;
 $info-color: #5bc0de !default;
 $warning-color: #f0ad4e !default;
 $error-color: #e74c3c !default;
-
-/// White
-/// @type Color
-$white: #fff !default;
-
-/// Black
-/// @type Color
-$black: #000 !default;
