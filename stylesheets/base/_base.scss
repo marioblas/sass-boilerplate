@@ -19,3 +19,10 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+/**
+ * Basic styles for links
+ */
+a {
+  text-decoration: none;
+}
