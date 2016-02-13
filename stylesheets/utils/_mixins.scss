@@ -1,3 +1,137 @@
-// -----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 // Sass Mixins
-// -----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+///
+/// Clearfix
+///
+@mixin clearfix($extend: true) {
+  @if $extend {
+    @extend %clear;
+  } @else {
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+///
+/// Font-face mixin
+///
+/// @link https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+///
+/// @example scss - Usage
+///   @include font-face(Samplinal, fonts/Samplinal, 500, normal, eot woff2 woff);
+///
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+///
+/// Centers a child element both horizontally and vertically inside its parent,
+/// no matter what the width or height of either are
+/// (assuming that the parent has `position: relative;`)
+///
+/// @author Chris Coyier
+///
+/// @link http://codepen.io/chriscoyier/pen/yybgZd
+///
+/// @param {Bool}   $horizontal - Center horizontally
+/// @param {Bool}   $vertial - Center vertically
+///
+/// @example scss - Usage
+///   .parent {
+///     position: relative;
+///   }
+///
+///   .child {
+///
+///     &.both {
+///       @include center;
+///     }
+///
+///     &.horizontal {
+///       @include center(true, false);
+///     }
+///
+///     &.vertical {
+///       @include center(false, true);
+///     }
+///   }
+///
+@mixin center($horizontal: true, $vertical: true) {
+  position: absolute;
+
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+///
+/// Quickly center any element within its parent.
+/// Requires width or max-width to be set.
+///
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+///
+/// Event wrapper
+///
+/// @author Harry Roberts
+///
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+///
+/// @param {Bool} $self [false] - Whether or not to include current selector
+///
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}

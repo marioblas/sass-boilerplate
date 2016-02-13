@@ -13,3 +13,7 @@
   padding-left: $horizontal-padding;
   padding-right: $horizontal-padding;
 }
+
+%clear {
+  @include clearfix($extend: false);
+}
