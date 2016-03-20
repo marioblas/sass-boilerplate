@@ -4,8 +4,7 @@
 # default options:
 # https://github.com/brigade/scss-lint/blob/master/config/default.yml
 #
-# Configuration according to Sass Guidelines (http://sass-guidelin.es/)
-# For SCSS-Lint v0.32.0
+# Configuration according to Sass Guidelines (http://sass-guidelin.es)
 
 scss_files: './stylesheets'
 
@@ -19,11 +18,22 @@ linters:
     space_before_bang: true
     space_after_bang: false
 
+  BemDepth:
+    enabled: true
+    max_elements: 1
+
   BorderZero:
     enabled: true
+    convention: zero
+
+  ChainedClasses:
+    enabled: false
 
   ColorKeyword:
     enabled: true
+
+  ColorVariable:
+    enabled: false
 
   Comment:
     enabled: false
@@ -32,6 +42,9 @@ linters:
     enabled: true
 
   DeclarationOrder:
+    enabled: true
+
+  DisableLinterReason:
     enabled: true
 
   DuplicateProperty:
@@ -43,10 +56,13 @@ linters:
 
   EmptyLineBetweenBlocks:
     enabled: true
-    ignore_single_line_blocks: false
+    ignore_single_line_blocks: true
 
   EmptyRule:
     enabled: true
+
+  ExtendDirective:
+    enabled: false
 
   FinalNewline:
     enabled: true
@@ -66,6 +82,9 @@ linters:
   IdSelector:
     enabled: true
 
+  ImportantRule:
+    enabled: false
+
   ImportPath:
     enabled: true
     leading_underscore: false
@@ -73,6 +92,7 @@ linters:
 
   Indentation:
     enabled: true
+    allow_non_nested_indentation: true
     character: space
     width: 2
 
@@ -91,18 +111,30 @@ linters:
 
   NestingDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 1
 
   PlaceholderInExtend:
     enabled: true
 
+  PrivateNamingConvention:
+    enabled: true
+    prefix: _
+
+  PropertyCount:
+    enabled: false
+
   PropertySortOrder:
     enabled: false
-    ignore_unspecified: false
 
   PropertySpelling:
     enabled: true
     extra_properties: []
+
+  PropertyUnits:
+    enabled: false
+
+  PseudoElement:
+    enabled: true
 
   QualifyingElement:
     enabled: true
@@ -139,6 +171,17 @@ linters:
   SpaceAfterPropertyName:
     enabled: true
 
+  SpaceAfterVariableColon:
+    enabled: true
+    style: at_least_one_space
+
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+    style: one_space
+
   SpaceBeforeBrace:
     enabled: true
     style: space
@@ -158,6 +201,9 @@ linters:
   TrailingZero:
     enabled: true
 
+  TransitionAll:
+    enabled: false
+
   UnnecessaryMantissa:
     enabled: true
 
@@ -169,6 +215,9 @@ linters:
 
   UrlQuotes:
     enabled: true
+
+  VariableForProperty:
+    enabled: false
 
   VendorPrefixes:
     enabled: true
