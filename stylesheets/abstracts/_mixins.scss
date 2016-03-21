@@ -9,7 +9,7 @@
   @if $extend {
     @extend %clear;
   } @else {
-    &:after {
+    &::after {
       content: '';
       display: table;
       clear: both;
