@@ -2,13 +2,32 @@
 // Sass Global Variables
 // ----------------------------------------------------------------------------
 
-/// Regular font family
+/// Sans serif font family
 /// @type List
-$base-font-stack: ('Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif) !default;
+$font-family-sans-serif: ('Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif) !default;
 
-/// Code font family (monospace)
+/// Serif font family
 /// @type List
-$code-font-stack: ('Droid Sans Mono', 'DejaVu Sans Mono', 'Courier New', 'Monaco', monospace) !default;
+$font-family-serif: ('Cambria', 'Times New Roman', 'Times', serif) !default;
+
+/// Monospace font family
+/// @type List
+$font-family-monospace: ('Droid Sans Mono', 'DejaVu Sans Mono', 'Courier New', 'Monaco', 'Consolas', monospace) !default;
+
+/// Base font family
+/// @type List
+$font-family-base: $font-family-sans-serif !default;
+
+
+
+/// Base font size
+/// @type Number
+$font-size-base: 1rem !default;
+
+/// Base line height.
+/// Equals to 24px while `$font-size-base` is 16px
+/// @type Number
+$line-height-base: 1.5 !default;
 
 
 
@@ -41,10 +60,37 @@ $brand-secondary: #e0effd !default;
 /// @type Color
 $white: #fff !default;
 $black: #000 !default;
+$gray-light: #818a91 !default;
+$gray-medium: #55595c !default;
+$gray-dark: #373a3c !default;
 
-/// Message colors
+/// Contextual colors
 /// @type Color
 $success-color: #4caf50 !default;
 $info-color: #5bc0de !default;
 $warning-color: #f0ad4e !default;
 $error-color: #e74c3c !default;
+
+
+
+/// Body background
+/// @type Color
+$body-bg: #fff !default;
+/// Body color
+/// @type Color
+$body-color: $black !default;
+
+
+
+/// Link color
+/// @type Color
+$link-color: $brand-primary !default;
+/// Link decoration
+/// @type Keyword
+$link-decoration: none !default;
+/// Link event color
+/// @type Color
+$link-event-color: darken($link-color, 15%) !default;
+/// Link event decoration
+/// @type Keyword
+$link-event-decoration: underline !default;

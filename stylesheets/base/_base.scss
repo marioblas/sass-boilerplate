@@ -14,7 +14,7 @@ html {
  * This make it easier to change the box-sizing in plugins or other components
  * that leverage other behavior
  *
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
  */
 *,
 *::before,
@@ -23,8 +23,33 @@ html {
 }
 
 /**
+ * Basic styles for body
+ */
+body {
+  background: $body-bg;
+}
+
+/**
+ * Basic styles for images
+ *
+ * 1. Set a maximum relative to the parent
+ * 2. Scale the height according to the width
+ */
+img {
+  max-width: 100%; /* 1 */
+  height: auto; /* 2 */
+  vertical-align: middle;
+}
+
+/**
  * Basic styles for links
  */
 a {
-  text-decoration: none;
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  @include on-event() {
+    color: $link-event-color;
+    text-decoration: $link-event-decoration;
+  }
 }

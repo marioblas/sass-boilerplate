@@ -3,6 +3,13 @@
 // -----------------------------------------------------------------------------
 
 /**
+ * Gives a proper height to the container when its children are floated
+ */
+.clearfix {
+  @include clearfix();
+}
+
+/**
  * Main container
  */
 .container {
