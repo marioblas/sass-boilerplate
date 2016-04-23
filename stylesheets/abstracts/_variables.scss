@@ -24,10 +24,21 @@ $font-family-base: $font-family-sans-serif !default;
 /// @type Number
 $font-size-base: 1rem !default;
 
-/// Base line height.
+/// Base line height
 /// Equals to 24px while `$font-size-base` is 16px
 /// @type Number
 $line-height-base: 1.5 !default;
+
+
+
+/// Breakpoints
+/// With em based sizes
+/// @link http://zellwk.com/blog/media-query-units
+$breakpoints: (
+  small: 20em,
+  medium: 48em,
+  large: 64em,
+) !default;
 
 
 
